@@ -1,0 +1,49 @@
+.fond {
+ background:#FFF7AF;
+ /* background:; */
+ /* background:; */
+ /* background:rgb(255,221,149); */
+ /* background:rgb(235,228,202); */
+ /* background:rgb(230,209,172); */
+ /* background:rgb(201,159,79); */
+ /* background:#E7C390; */
+ /* background:#FFEBB8; */
+
+ color: #2A2215;
+ /* color: ; */
+ /* color: ; */
+ /* color: ; */
+ /* color: ; */
+ /* color: #7E5835; */
+ /* color: #785E2F; */;
+ /* color: brown; */
+ /* color: white; */
+
+ font-family: Gill Sans, sans-serif;
+
+}
+
+h1{
+  font-size: 1.75em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2A2215;
+  background: none;
+}
+
+h2{
+  font-size: 1.25em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2A2215;
+  background: none;
+}
+.input100 {
+  min-width: 100px;
+}
+
+.input200 {
+  min-width: 200px;
+}
+
+.input300 {
+  min-width: 300px;
+}

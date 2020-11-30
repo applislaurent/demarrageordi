@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\batch",
+    "\\src\\components\\my-loader",
+    "\\src\\services"
+  ],
+  "SelectedNode": "\\src\\components\\app.module.ts",
+  "PreviewInSolutionExplorer": false
+}
