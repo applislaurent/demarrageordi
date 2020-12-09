@@ -147,33 +147,33 @@ export class BatchComponent implements OnInit {
     var sitewebDtos: SitewebDto[] = new Array();
     var logicielsEtSitesDto = new LogicielsEtSitesDto();
 
-    if(formulaireCreationDto.nomLogiciel1 !="" &&formulaireCreationDto.repertoireLogiciel1 !="") {
+    if(formulaireCreationDto.nomLogiciel1 !="") {
       var logicielDto1: LogicielDto = new LogicielDto();
-      logicielDto1.setValues(1, formulaireCreationDto.nomLogiciel1, formulaireCreationDto.repertoireLogiciel1);
+      logicielDto1.setValues(1, formulaireCreationDto.nomLogiciel1, formulaireCreationDto.nomLogiciel1);
       logicielDtos.push(logicielDto1);
     }
 
-    if(formulaireCreationDto.nomLogiciel2 !="" &&formulaireCreationDto.repertoireLogiciel2 !="") {
+    if(formulaireCreationDto.nomLogiciel2 !="") {
       var logicielDto2: LogicielDto = new LogicielDto();
-      logicielDto2.setValues(1, formulaireCreationDto.nomLogiciel2, formulaireCreationDto.repertoireLogiciel2);
+      logicielDto2.setValues(1, formulaireCreationDto.nomLogiciel2, formulaireCreationDto.nomLogiciel2);
       logicielDtos.push(logicielDto2);
     }
 
-    if(formulaireCreationDto.nomLogiciel3 !="" &&formulaireCreationDto.repertoireLogiciel3 !="") {
+    if(formulaireCreationDto.nomLogiciel3 !="") {
       var logicielDto3: LogicielDto = new LogicielDto();
-      logicielDto3.setValues(1, formulaireCreationDto.nomLogiciel3, formulaireCreationDto.repertoireLogiciel3);
+      logicielDto3.setValues(1, formulaireCreationDto.nomLogiciel3, formulaireCreationDto.nomLogiciel3);
       logicielDtos.push(logicielDto3);
     }
 
-    if(formulaireCreationDto.nomLogiciel4 !="" &&formulaireCreationDto.repertoireLogiciel4 !="") {
+    if(formulaireCreationDto.nomLogiciel4 !="") {
       var logicielDto4: LogicielDto = new LogicielDto();
-      logicielDto4.setValues(1, formulaireCreationDto.nomLogiciel4, formulaireCreationDto.repertoireLogiciel4);
+      logicielDto4.setValues(1, formulaireCreationDto.nomLogiciel4, formulaireCreationDto.nomLogiciel4);
       logicielDtos.push(logicielDto4);
     }
 
-    if(formulaireCreationDto.nomLogiciel5 !="" &&formulaireCreationDto.repertoireLogiciel5 !="") {
+    if(formulaireCreationDto.nomLogiciel5 !="") {
       var logicielDto5: LogicielDto = new LogicielDto();
-      logicielDto5.setValues(1, formulaireCreationDto.nomLogiciel5, formulaireCreationDto.repertoireLogiciel5);
+      logicielDto5.setValues(1, formulaireCreationDto.nomLogiciel5, formulaireCreationDto.nomLogiciel5);
       logicielDtos.push(logicielDto5);
     }
 
