@@ -122,7 +122,7 @@ export class BatchComponent implements OnInit {
             .subscribe(blob => {
                                  if(blob instanceof Blob && blob.type==='application/octet-stream') {
                                     saveAs(blob, 'Demarrage_sites_et_logiciels.bat');
-                                    this.messageConfirmationCreationOK = "Le batch a bien été créé, merci !";
+                                    this.messageConfirmationCreationOK = "Le fichier a bien été créé, merci !";
                                     this.messageErreur = "";
                                  }
                                  else {
