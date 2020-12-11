@@ -95,23 +95,6 @@ export class BatchComponent implements OnInit {
     return this.formulaireCreationBatch.controls;
   }
 
-  /* Méthode de création de batch:
-	- appelée lors du clic sur le bouton 'Créer le fichier'
-	- appelle LogicielService.creerLogiciel(), en lui passant en paramètre les infos du formulaire de saisie */
-	/*creerBatch(): void {
-
-    this.batchService
-            .creerBatch(this.tologicielsEtSitesDto(this.formulaireCreationBatch.value))
-            .subscribe(blob => {
-                                 saveAs(blob, 'Demarrage_sites_et_logiciels.bat');
-                               },
-                       erreur => {this.messageErreur = erreur.error}
-            );
-    this.messageConfirmationCreationOK = "Le batch a bien été créé, merci !";
-
-  }
-  */
-
    /* Méthode de création de batch:
 	- appelée lors du clic sur le bouton 'Créer le fichier'
 	- appelle LogicielService.creerLogiciel(), en lui passant en paramètre les infos du formulaire de saisie */
@@ -122,7 +105,7 @@ export class BatchComponent implements OnInit {
             .subscribe(blob => {
                                  if(blob instanceof Blob && blob.type==='application/octet-stream') {
                                     saveAs(blob, 'Demarrage_sites_et_logiciels.bat');
-                                    this.messageConfirmationCreationOK = "Le fichier a bien été créé, merci !";
+                                    this.messageConfirmationCreationOK = "Le fichier a bien été créé, quand vous le lancerez vous devrez sans doute donner l'autorisation à votre antivirus de le faire";
                                     this.messageErreur = "";
                                  }
                                  else {
@@ -215,16 +198,6 @@ export class BatchComponent implements OnInit {
 
     return logicielsEtSitesDto;
 
-  }
-
-  telechargerBatch(): void {
-
-    this.batchService
-            .telechargerBatch()
-            .subscribe(blob => {
-              saveAs(blob, 'Demarrage_sites_et_logiciels.bat');
-            });
-    this.messageConfirmationCreationOK = "Le batch a bien été enregistré, merci !";
   }
 
 }
