@@ -31,78 +31,28 @@
         <main>
             <form [formGroup]="formulaireCreationBatch">
                 <h2>Logiciels</h2>
-						<div class = "colonne paddingLeft2Em">
-							<div class="logiciel">
-								<label for="nomLogiciel1"> Logiciel 1: </label>
-								<input type="text" formControlName="nomLogiciel1" id="nomLogiciel1" required="false" placeholder=" Par exemple 'C:\Program Files (x86)\OpenOffice 4\program\swriter.exe'" class="input500">
-							</div>
-							<div class="logiciel">
-								<label for="nomLogiciel2"> Logiciel 2: </label>
-								<input type="text" formControlName="nomLogiciel2" id="nomLogiciel2" required="false" placeholder=" Par exemple 'C:\Program Files (x86)\OpenOffice 4\program\swriter.exe'" class="input500">
-							</div>
-							<div class="logiciel">
-								<label for="nomLogiciel3"> Logiciel 3: </label>
-								<input type="text" formControlName="nomLogiciel3" id="nomLogiciel3" required="false" placeholder=" Par exemple 'C:\Program Files (x86)\OpenOffice 4\program\swriter.exe'" class="input500">
-							</div>
-							<div class="logiciel">
-								<label for="nomLogiciel4"> Logiciel 4: </label>
-								<input type="text" formControlName="nomLogiciel4" id="nomLogiciel4" required="false" placeholder=" Par exemple 'C:\Program Files (x86)\OpenOffice 4\program\swriter.exe'" class="input500">
-							</div>
-							<div class="logiciel">
-								<label for="nomLogiciel4"> Logiciel 5: </label>
-								<input type="text" formControlName="nomLogiciel5" id="nomLogiciel5" required="false" placeholder=" Par exemple 'C:\Program Files (x86)\OpenOffice 4\program\swriter.exe'" class="input500">
-							</div>
+					<div></div>
+					<div *ngFor="let logiciel of getLogicielsFormControls(); let i = index">
+						<label>Logiciel {{i+1}} </label>    
+						<input [formControl]="logiciel" name="logiciel" type="text">
+						<button (click)="supprimerLogiciel(i)">Supprimer</button>    
+					</div>
+					<br>  
+					<button (click)="ajouterLogiciel()">Ajouter un logiciel</button>
+					<br>
+				<h2>Sites</h2>
+					<div *ngFor="let urlSiteweb of getUrlSitewebsFormControls(); let i = index" class="aligne">
+						<label>Site web {{i+1}} </label>    
+						<input [formControl]="urlSiteweb" name="urlSiteweb" type="text">
+						<button (click)="supprimerUrlSiteweb(i)">Supprimer</button>
+						<div *ngIf="urlSiteweb.touched && urlSiteweb.invalid && urlSiteweb.dirty" class="messageErreur">
+							L'adresse {{urlSiteweb.value}} est invalide.
 						</div>
-                <h2>Sites</h2>
-						<div class = "colonne paddingLeft2Em">
-							<div class="aligne">
-								<label for="urlSiteweb1" type="url"> Adresse du site 1: </label>
-								<input type="text" formControlName="urlSiteweb1" id="urlSiteweb1" required="false" placeholder=" Par exemple 'http://www.blablabla.fr'" class="input300">
-								<div *ngIf="f.urlSiteweb1.touched && f.urlSiteweb1.invalid">
-									<div *ngIf="f.urlSiteweb1.errors.pattern" class="messageErreur">
-										L'adresse {{f.urlSiteweb1.value}} est invalide
-									</div>
-								</div>
-							</div>
-							<div class="aligne">
-								<label for="urlSiteweb2" type="url"> Adresse du site 2: </label>
-								<input type="text" formControlName="urlSiteweb2" id="urlSiteweb2" required="false" placeholder=" Par exemple 'http://www.blablabla.fr'" class="input300">
-								<div *ngIf="f.urlSiteweb2.touched && f.urlSiteweb2.invalid">
-									<div *ngIf="f.urlSiteweb2.errors.pattern" class="messageErreur">
-										L'adresse {{f.urlSiteweb2.value}} est invalide
-									</div>
-								</div>
-							</div>
-							<div class="aligne">
-								<label for="urlSiteweb3" type="url"> Adresse du site 3: </label>
-								<input type="text" formControlName="urlSiteweb3" id="urlSiteweb3" required="false" placeholder=" Par exemple 'http://www.blablabla.fr'" class="input300">
-								<div *ngIf="f.urlSiteweb3.touched && f.urlSiteweb3.invalid">
-									<div *ngIf="f.urlSiteweb3.errors.pattern" class="messageErreur">
-										L'adresse {{f.urlSiteweb3.value}} est invalide
-									</div>
-								</div>
-							</div>
-							<div class="aligne">
-								<label for="urlSiteweb4" type="url"> Adresse du site 4: </label>
-								<input type="text" formControlName="urlSiteweb4" id="urlSiteweb4" required="false" placeholder=" Par exemple 'http://www.blablabla.fr'" class="input300">
-								<div *ngIf="f.urlSiteweb4.touched && f.urlSiteweb4.invalid">
-									<div *ngIf="f.urlSiteweb4.errors.pattern" class="messageErreur">
-										L'adresse {{f.urlSiteweb4.value}} est invalide
-									</div>
-							</div>
-							</div>
-							<div class="aligne">
-								<label for="urlSiteweb5" type="url"> Adresse du site 5: </label>
-								<input type="text" formControlName="urlSiteweb5" id="urlSiteweb5" required="false" placeholder=" Par exemple 'http://www.blablabla.fr'" class="input300">
-								<div *ngIf="f.urlSiteweb5.touched && f.urlSiteweb5.invalid">
-									<div *ngIf="f.urlSiteweb5.errors.pattern" class="messageErreur">
-										L'adresse {{f.urlSiteweb5.value}} est invalide
-									</div>
-								</div>
-						   </div>
-						</div>
-                   <br>
-                   <button type="button" (click)="creerBatch()" [disabled]="!formulaireCreationBatch.valid"> Créer le fichier</button>
+					</div>
+					<br>  
+					<button (click)="ajouterUrlSiteweb()">Ajouter un site web</button>
+					<br>
+   				   <button type="button" (click)="creerBatch()" [disabled]="!formulaireCreationBatch.valid"> Créer le fichier</button>
                    <br>
             </form>
         </main>
