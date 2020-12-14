@@ -11,6 +11,7 @@ import { saveAs } from 'file-saver/src/FileSaver';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpErrorResponse } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-batch',
   templateUrl: './batch.component.html',
@@ -152,6 +153,8 @@ export class BatchComponent implements OnInit {
 
 	logicielsEtSitesDto.logicielDtos = logicielDtos;
 	
+	console.log(logicielDtos);
+	
 	// Ajout des sites webs
 	
 	var urlSitewebs: string = this.formulaireCreationBatch.value.urlSitewebs ;	
@@ -163,8 +166,11 @@ export class BatchComponent implements OnInit {
       sitewebDtos.push(sitewebDto);			
 	}
     logicielsEtSitesDto.sitewebDtos = sitewebDtos;
+	
+	console.log(sitewebDtos);
 
-   formulaireCreationDto = new FormulaireCreationDto();
+
+   console.log(logicielsEtSitesDto);
 
     return logicielsEtSitesDto;
 

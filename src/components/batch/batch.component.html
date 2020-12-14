@@ -27,31 +27,31 @@
   {{messageConfirmationCreationOK}}
 </div>
 <div>
-    <div>
+    <div> 
         <main>
             <form [formGroup]="formulaireCreationBatch">
                 <h2>Logiciels</h2>
 					<div></div>
 					<div *ngFor="let logiciel of getLogicielsFormControls(); let i = index">
 						<label>Logiciel {{i+1}} </label>
-						<input formControlName="logiciel" type="text" id="nomLogiciel" name="logiciel" required="false" placeholder=" Par exemple 'C:\Program Files (x86)\OpenOffice 4\program\swriter.exe'" class="input500">
-						<button (click)="supprimerLogiciel(i)">Supprimer</button>    
+						<input [formControl]="logiciel" type="text" id="nomLogiciel" name="logiciel" required="false" placeholder=" Par exemple 'C:\Program Files (x86)\OpenOffice 4\program\swriter.exe'" class="input500">
+						<button (click)="supprimerLogiciel(i)" class="boutonSupprimer">x</button> 
 					</div>
 					<br>  
-					<button (click)="ajouterLogiciel()">Ajouter un logiciel</button>
+					<button (click)="ajouterLogiciel()"class="boutonAjouter"><strong>+ </strong> Ajouter un autre logiciel</button>
 					<br>
 				<h2>Sites</h2>
 					<div *ngFor="let urlSiteweb of getUrlSitewebsFormControls(); let i = index" class="aligne">
 						<label>Site web {{i+1}} </label>
 						<input [formControl]="urlSiteweb" type="text" id="urlSiteweb" name="urlSiteweb" required="false" placeholder=" Par exemple 'http://www.blablabla.fr'" class="input300">	
-						<button (click)="supprimerUrlSiteweb(i)">Supprimer</button>
-						<div *ngIf="urlSiteweb.touched && urlSiteweb.invalid && urlSiteweb.dirty" class="messageErreur">
+						<button (click)="supprimerUrlSiteweb(i)" class="boutonSupprimer">x</button>
+						<div *ngIf="urlSiteweb.touched && urlSiteweb.invalid" class="messageErreur">
 							L'adresse {{urlSiteweb.value}} est invalide.
 						</div>
 					</div>
-					<br>  
-					<button (click)="ajouterUrlSiteweb()">Ajouter un site web</button>
 					<br>
+					<button (click)="ajouterUrlSiteweb()"class="boutonAjouter"><strong>+ </strong> Ajouter un autre site web</button>
+					<br><br>
    				   <button type="button" (click)="creerBatch()" [disabled]="!formulaireCreationBatch.valid"> Créer le fichier</button>
                    <br>
             </form>

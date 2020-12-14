@@ -1,0 +1,9 @@
+
+
+batch.component = le composant central de l'application. Comprend tout le traitement et l'affichage de la page.
+batch.service = utilisé par batch.component, consomme l'API springboot
+
+myloader.component = le composant utilisé pour attendre la réponse du serveur (API), affiche aussi l'image de la grenouille.
+loader.service = utilisé par myloader.component, 
+loader-interceptor.service = intercept les requêtes en direction du serveur, appelle loader.service,  valide la réponse ou catche les erreurs  (??)
+==> Essayer de mieux comprendre l'articulation entre les 3 composants (description ci-dessous probablement fausse ou incomplète)
