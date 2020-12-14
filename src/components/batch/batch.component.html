@@ -33,8 +33,8 @@
                 <h2>Logiciels</h2>
 					<div></div>
 					<div *ngFor="let logiciel of getLogicielsFormControls(); let i = index">
-						<label>Logiciel {{i+1}} </label>    
-						<input [formControl]="logiciel" name="logiciel" type="text">
+						<label>Logiciel {{i+1}} </label>
+						<input formControlName="logiciel" type="text" id="nomLogiciel" name="logiciel" required="false" placeholder=" Par exemple 'C:\Program Files (x86)\OpenOffice 4\program\swriter.exe'" class="input500">
 						<button (click)="supprimerLogiciel(i)">Supprimer</button>    
 					</div>
 					<br>  
@@ -42,8 +42,8 @@
 					<br>
 				<h2>Sites</h2>
 					<div *ngFor="let urlSiteweb of getUrlSitewebsFormControls(); let i = index" class="aligne">
-						<label>Site web {{i+1}} </label>    
-						<input [formControl]="urlSiteweb" name="urlSiteweb" type="text">
+						<label>Site web {{i+1}} </label>
+						<input [formControl]="urlSiteweb" type="text" id="urlSiteweb" name="urlSiteweb" required="false" placeholder=" Par exemple 'http://www.blablabla.fr'" class="input300">	
 						<button (click)="supprimerUrlSiteweb(i)">Supprimer</button>
 						<div *ngIf="urlSiteweb.touched && urlSiteweb.invalid && urlSiteweb.dirty" class="messageErreur">
 							L'adresse {{urlSiteweb.value}} est invalide.
