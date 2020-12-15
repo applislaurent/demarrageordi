@@ -115,7 +115,7 @@ export class BatchComponent implements OnInit {
             .subscribe(blob => {
                                  if(blob instanceof Blob && blob.type==='application/octet-stream') {
                                     saveAs(blob, 'Demarrage_sites_et_logiciels.bat');
-                                    this.messageConfirmationCreationOK = "Le fichier a bien été créé, quand vous le lancerez vous devrez sans doute donner l'autorisation à votre navigateur/antivirus de le faire";
+                                    this.messageConfirmationCreationOK = "Le fichier a bien été créé, quand vous le lancerez vous devrez sans doute donner l'autorisation à votre navigateur/antivirus de l'exécuter";
                                     this.messageErreur = "";
                                  }
                                  else {
