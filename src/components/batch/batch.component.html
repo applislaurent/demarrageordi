@@ -37,6 +37,11 @@
 						<input [formControl]="logiciel" type="text" id="nomLogiciel" name="logiciel" required="false" placeholder=" Par exemple 'C:\Program Files (x86)\OpenOffice 4\program\swriter.exe'" class="input500">
 						<button (click)="supprimerLogiciel(i)" class="boutonSupprimer">x</button> 
 					</div>
+					<div>
+						<p>
+							Besoin d'aide pour trouver votre logiciel? <a href = "assets/tutoriel.pdf" target="_blank">Suivez notre tutoriel</a>.
+						</p>
+					</div>
 					<br>  
 					<button (click)="ajouterLogiciel()"class="boutonAjouter"><strong>+ </strong> Ajouter un autre logiciel</button>
 					<br>
