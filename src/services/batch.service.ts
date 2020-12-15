@@ -22,7 +22,7 @@ export class BatchService {
 
   // Accès à l'application 'demarrageordi'
   // Accès local
-  //private urlDemarrageOrdi = 'http://localhost:8080/demarrageordi';
+  // private urlDemarrageOrdi = 'http://localhost:8080/demarrageordi';
   // Accès distant
   //private urlDemarrageOrdi = 'https://demarrageordi.osc-fr1.scalingo.io/demarrageordi';
   private urlDemarrageOrdi = 'https://demarrageordi.herokuapp.com/demarrageordi';
